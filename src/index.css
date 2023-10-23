@@ -5,5 +5,9 @@
 @layer base {
   html {
     font-family: "Patrick Hand", system-ui, sans-serif;
+    color: #FFF;
+  }
+  #root {
+    @apply bg-gradient-to-b from-[#374151] to-[#111827];
   }
 }
