@@ -7,12 +7,12 @@ export default function Navbar(){
     { link: "Back-end", path: "back-end" },
   ]
   return (
-    <header className="flex justify-between p-[30px]">
+    <header className="flex items-center justify-between p-[30px]">
       <div>
-        <div id="nav-button" className="md:hidden">
-          <span>bu</span>
-          <span>r</span>
-          <span>ger</span>
+        <div id="nav-button" className="hover:cursor-pointer md:hidden">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         <nav className="hidden md:block">
           <ul className="gap-10 md:flex">
@@ -20,9 +20,9 @@ export default function Navbar(){
           </ul>
         </nav>
       </div>
-      <div className="md:order-first">
-        <span>Epic</span>
-        <span>tetus</span>
+      <div className="flex items-center gap-3 text-lg md:order-first">
+        <span className="flex h-[35px] w-[35px] items-center justify-center bg-[#4B5563] font-source">E</span>
+        <span>Epictetus</span>
       </div>
       <div>
         search

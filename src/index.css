@@ -11,3 +11,7 @@
     @apply bg-gradient-to-b from-[#374151] to-[#111827];
   }
 }
+
+#nav-button span {
+  @apply block bg-white opacity-40 h-[2px] w-5 my-1;
+}
