@@ -9,17 +9,40 @@ export default function Navbar(){
     { link: "Cyber Security", path: "cyber-sec" },
   ]
 
+  const toggleClass = (el, classn = 'hidden') => {
+    el.classList.toggle(classn)
+    console.log(el,classn)
+  }
+
   const onLainnyaClickHandler = () => {
-    document.getElementById('nav-lainnya').classList.toggle('hidden')
+    toggleClass(document.getElementById('nav-lainnya'))
+  }
+
+  const onHamburgerClickHandler = () => {
+    const nav = document.getElementById('nav-mobile')
+    const ham = document.getElementById('nav-button')
+    toggleClass(ham, 'hamburger-active')
+    toggleClass(nav)
   }
 
   return (
     <header className="flex items-center justify-between p-[30px]">
       <div>
-        <div id="nav-button" className="hover:cursor-pointer md:hidden">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div className="relative md:hidden">
+          <div id="nav-button" className=" hover:cursor-pointer" onClick={onHamburgerClickHandler}>
+            <span className="origin-top-left"></span>
+            <span></span>
+            <span className="origin-bottom-left"></span>
+          </div>
+          <ul id="nav-mobile" className="absolute -left-3 top-10 flex hidden w-32 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
+            {navMenu.map(({ link, path }) => {
+              return (
+                <li key={path}>
+                  <Link to={path}>{link}</Link>
+                </li>
+              )
+            })}
+          </ul>
         </div>
         <nav className="hidden md:block">
           <ul className="gap-10 md:flex">
