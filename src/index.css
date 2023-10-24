@@ -15,3 +15,7 @@
 #nav-button span {
   @apply block bg-white opacity-40 h-[2px] w-5 my-1;
 }
+
+a, button {
+  @apply hover:opacity-60;
+}
