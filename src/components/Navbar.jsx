@@ -8,6 +8,11 @@ export default function Navbar(){
     { link: "DevOps", path: "devops" },
     { link: "Cyber Security", path: "cyber-sec" },
   ]
+
+  const onLainnyaClickHandler = () => {
+    document.getElementById('nav-lainnya').classList.toggle('hidden')
+  }
+
   return (
     <header className="flex items-center justify-between p-[30px]">
       <div>
@@ -18,17 +23,29 @@ export default function Navbar(){
         </div>
         <nav className="hidden md:block">
           <ul className="gap-10 md:flex">
-            {navMenu.slice(0,3).map(({ link, path }) => {
+            {navMenu.splice(0,3).map(({ link, path }) => {
               return (
                 <li key={path}>
                   <Link to={path}>{link}</Link>
                 </li>
               )
             })}
-            <button className="inline">
-              Lainnya <span><svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6L8 10L12 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg> </span></button>
+            <div className="relative">
+              <button className="inline" onClick={onLainnyaClickHandler}>
+                Lainnya <span><svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6L8 10L12 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg> </span>
+              </button>
+              <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-32 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-3 shadow-lg">
+                {navMenu.map(({ path, link }) => {
+                  return (
+                    <li key={path}>
+                      <Link to={path}>{link}</Link>
+                    </li>  
+                  )
+                })}
+              </ul>
+            </div>
           </ul>
         </nav>
       </div>
