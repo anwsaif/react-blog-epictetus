@@ -1,15 +1,18 @@
 import './App.css'
-import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Header />
         <Routes>
           <Route path='/'/>
         </Routes>
+        <Footer />
       </Router>
     </>
   )
