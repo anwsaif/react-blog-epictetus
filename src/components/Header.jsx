@@ -1,6 +1,6 @@
 import { Link, Form } from "react-router-dom"
 
-export default function Navbar(){
+export default function Header(){
   const navMenu = [
     { link: "UI Design", path: "ui-design" },
     { link: "Front-end", path: "front-end" },
