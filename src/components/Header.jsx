@@ -23,6 +23,7 @@ export default function Navbar(){
     const ham = document.getElementById('nav-button')
     toggleClass(ham, 'hamburger-active')
     toggleClass(nav)
+    toggleClass(nav, 'flex')
   }
 
   return (
@@ -36,7 +37,7 @@ export default function Navbar(){
                 <span></span>
                 <span className="origin-bottom-left"></span>
               </button>
-              <ul id="nav-mobile" className="absolute -left-3 top-10 flex hidden w-36 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
+              <ul id="nav-mobile" className="absolute -left-3 top-10 z-50 hidden w-36 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
                 {navMenu.map(({ link, path }) => {
                   return (
                     <li key={path}>
