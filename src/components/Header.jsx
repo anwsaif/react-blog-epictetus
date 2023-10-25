@@ -79,8 +79,8 @@ export default function Header(){
             <span className="flex h-[35px] w-[35px] items-center justify-center bg-[#4B5563] font-source">E</span>
             <span>Epictetus</span>
           </div>
-          <div className="flex items-center gap-3 rounded-full bg-transparent pl-5 md:w-full md:max-w-[224px] md:bg-[rgba(31,41,55,0.60)]">
-            <button className="opacity-40 hover:cursor-pointer md:hidden md:opacity-10">
+          <div className="flex items-center gap-3 rounded-full bg-transparent pl-5 lg:w-full lg:max-w-[224px] lg:bg-[rgba(31,41,55,0.60)]">
+            <button className="opacity-40 hover:cursor-pointer lg:hidden lg:opacity-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="1">
                   <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -88,7 +88,7 @@ export default function Header(){
                 </g>
               </svg>
             </button>
-            <span className="hidden md:block">
+            <span className="hidden lg:block">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.1" clip-path="url(#clip0_5_30)">
                   <path d="M6.41667 11.0833C8.994 11.0833 11.0833 8.994 11.0833 6.41667C11.0833 3.83934 8.994 1.75 6.41667 1.75C3.83934 1.75 1.75 3.83934 1.75 6.41667C1.75 8.994 3.83934 11.0833 6.41667 11.0833Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -101,7 +101,7 @@ export default function Header(){
                 </defs>
               </svg>
             </span>
-            <form className="hidden md:block">
+            <form className="hidden lg:block">
               <input className="bg-transparent px-2 py-3 outline-none" placeholder="Search" />
             </form>
           </div>
