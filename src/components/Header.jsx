@@ -30,13 +30,13 @@ export default function Navbar(){
       <div className="container mx-auto">
         <div className="flex items-center justify-between ">
           <div>
-            <div className="relative md:hidden">
+            <div className="relative lg:hidden">
               <button id="nav-button" className=" hover:cursor-pointer" onClick={onHamburgerClickHandler}>
                 <span className="origin-top-left"></span>
                 <span></span>
                 <span className="origin-bottom-left"></span>
               </button>
-              <ul id="nav-mobile" className="absolute -left-3 top-10 flex hidden w-32 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
+              <ul id="nav-mobile" className="absolute -left-3 top-10 flex hidden w-36 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
                 {navMenu.map(({ link, path }) => {
                   return (
                     <li key={path}>
@@ -46,7 +46,7 @@ export default function Navbar(){
                 })}
               </ul>
             </div>
-            <nav className="hidden md:block">
+            <nav className="hidden lg:block">
               <ul className="gap-10 md:flex">
                 {navMenu.splice(0,3).map(({ link, path }) => {
                   return (
@@ -61,7 +61,7 @@ export default function Navbar(){
                       <path d="M4 6L8 10L12 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg> </span>
                   </button>
-                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-32 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-3 shadow-lg">
+                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-36 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-3 shadow-lg">
                     {navMenu.map(({ path, link }) => {
                       return (
                         <li key={path}>
@@ -74,7 +74,7 @@ export default function Navbar(){
               </ul>
             </nav>
           </div>
-          <div className="flex items-center gap-3 text-lg md:order-first">
+          <div className="flex items-center gap-3 text-lg lg:order-first">
             <span className="flex h-[35px] w-[35px] items-center justify-center bg-[#4B5563] font-source">E</span>
             <span>Epictetus</span>
           </div>
