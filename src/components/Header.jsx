@@ -5,8 +5,9 @@ export default function Header(){
     { link: "UI Design", path: "ui-design" },
     { link: "Front-end", path: "front-end" },
     { link: "Back-end", path: "back-end" },
-    { link: "DevOps", path: "devops" },
-    { link: "Cyber Security", path: "cyber-sec" },
+    { link: "Internet", path: "internet" },
+    { link: "9 to 5", path: "9-to-5" },
+    { link: "Inspirations", path: "inspirations" },
   ]
 
   const toggleClass = (el, classn = 'hidden') => {
@@ -37,7 +38,7 @@ export default function Header(){
                 <span></span>
                 <span className="origin-bottom-left"></span>
               </button>
-              <ul id="nav-mobile" className="absolute -left-3 top-10 z-50 hidden w-36 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-md">
+              <ul id="nav-mobile" className="absolute -left-3 top-10 z-50 hidden w-36 flex-col gap-3 rounded-sm bg-[#374151] px-3 py-4 shadow-lg">
                 {navMenu.map(({ link, path }) => {
                   return (
                     <li key={path}>

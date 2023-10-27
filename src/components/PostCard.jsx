@@ -1,4 +1,4 @@
-export default function PostCard(){
+const PostCard = () => {
   // const img = 'post-2.jpg';
   const img = 'https://source.unsplash.com/400x1000?billie+eilish'
   return (
@@ -25,3 +25,5 @@ export default function PostCard(){
     </div>
   )
 }
+
+export default PostCard 
