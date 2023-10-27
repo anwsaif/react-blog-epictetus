@@ -1,6 +1,8 @@
+import { useOutletContext } from "react-router-dom"
+
 const PostCard = () => {
-  // const img = 'post-2.jpg';
-  const img = 'https://source.unsplash.com/400x1000?billie+eilish'
+  const { postImagePath, authorImagePath } = useOutletContext()
+
   return (
     <div className="flex w-full flex-col gap-y-5 sm:w-2/5">
       <div className="relative aspect-video w-full overflow-hidden rounded-[10px]">
