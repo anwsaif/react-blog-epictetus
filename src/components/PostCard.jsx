@@ -14,7 +14,7 @@ const PostCard = (props) => {
           <span className="h-1 w-1 rounded-full bg-[rgba(255,255,255,0.60)]"></span>
           <span>June 28, 2021</span>
         </div>
-        <p className="text-xl">
+        <p className="text-2xl">
           How to design a product that can grow itself 10x in year
         </p>
         <p className="opacity-60">
