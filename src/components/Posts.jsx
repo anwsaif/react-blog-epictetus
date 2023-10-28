@@ -8,7 +8,7 @@ export default function Posts(){
         <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-16">
           {data.map((d,i) => {
             return (
-              <PostCard key={i} data={d}/>
+              <PostCard key={i} data={d} id={i}/>
             )
           })}
         </div>

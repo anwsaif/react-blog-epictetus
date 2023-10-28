@@ -63,7 +63,7 @@ export default function Header(){
                       <path d="M4 6L8 10L12 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg> </span>
                   </button>
-                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-36 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-3 shadow-lg">
+                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-36 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-4 shadow-xl">
                     {navMenu.map(({ path, link }) => {
                       return (
                         <li key={path}>

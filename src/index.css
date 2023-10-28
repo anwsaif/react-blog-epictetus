@@ -10,6 +10,9 @@
   #root {
     @apply bg-gradient-to-b from-[#374151] to-[#111827];
   }
+  #root > * {
+    @apply lg:px-32;
+  }
 }
 
 #nav-button span {
