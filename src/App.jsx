@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Posts />} />
+            <Route path="category/:category" element={<Posts />} />
           </Route>
         </Routes>
       </Router>

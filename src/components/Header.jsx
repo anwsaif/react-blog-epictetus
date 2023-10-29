@@ -1,18 +1,19 @@
 import { Link, Form } from "react-router-dom"
 
-export default function Header(){
-  const navMenu = [
-    { link: "UI Design", path: "ui-design" },
-    { link: "Front-end", path: "front-end" },
-    { link: "Back-end", path: "back-end" },
-    { link: "Internet", path: "internet" },
-    { link: "9 to 5", path: "9-to-5" },
-    { link: "Inspirations", path: "inspirations" },
-  ]
+const navItems= [
+  { "link": "UI Design", "path": "ui-design" },
+  { "link": "Front-end", "path": "front-end" },
+  { "link": "Back-end", "path": "back-end" },
+  { "link": "Internet", "path": "internet" },
+  { "link": "9 to 5", "path": "9-to-5" },
+  { "link": "Inspirations", "path": "inspirations" }
+]
 
+export { navItems }
+export default function Header(){
+  const [...navMenu] = navItems
   const toggleClass = (el, classn = 'hidden') => {
     el.classList.toggle(classn)
-    console.log(el,classn)
   }
 
   const onLainnyaClickHandler = () => {
@@ -42,7 +43,7 @@ export default function Header(){
                 {navMenu.map(({ link, path }) => {
                   return (
                     <li key={path}>
-                      <Link to={path}>{link}</Link>
+                      <Link to={`category/` + path}>{link}</Link>
                     </li>
                   )
                 })}
@@ -53,7 +54,7 @@ export default function Header(){
                 {navMenu.splice(0,3).map(({ link, path }) => {
                   return (
                     <li key={path}>
-                      <Link to={path}>{link}</Link>
+                      <Link to={`category/` + path}>{link}</Link>
                     </li>
                   )
                 })}
@@ -67,7 +68,7 @@ export default function Header(){
                     {navMenu.map(({ path, link }) => {
                       return (
                         <li key={path}>
-                          <Link to={path}>{link}</Link>
+                          <Link to={`category/` + path}>{link}</Link>
                         </li>  
                       )
                     })}
