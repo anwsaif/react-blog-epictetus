@@ -3,3 +3,9 @@ export const getPosts = async () => {
   const posts = await response.json()
   return posts
 }
+
+export const getPost = async (id) => {
+  const posts = await getPosts()
+  const post = posts.find(post => post.id == id)
+  return post
+}
