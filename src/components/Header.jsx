@@ -76,10 +76,10 @@ export default function Header(){
               </ul>
             </nav>
           </div>
-          <div className="flex items-center gap-3 text-lg lg:order-first">
+          <Link to='/' className="flex items-center gap-3 text-lg hover:opacity-100 lg:order-first">
             <span className="flex h-[35px] w-[35px] items-center justify-center bg-[#4B5563] font-source">E</span>
             <span>Epictetus</span>
-          </div>
+          </Link>
           <div className="flex items-center gap-3 rounded-full bg-transparent pl-5 lg:w-full lg:max-w-[224px] lg:bg-[rgba(31,41,55,0.60)]">
             <button className="opacity-40 hover:cursor-pointer lg:hidden lg:opacity-10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

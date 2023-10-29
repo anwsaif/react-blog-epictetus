@@ -6,7 +6,7 @@ const PostCard = (props) => {
   const isIndexAndFirst = useLocation().pathname === '/' && props.id === 0
 
   return (
-    <div className={`flex w-full grow flex-col gap-x-8 gap-y-5 sm:w-2/5 lg:w-3/12 ` + (isIndexAndFirst ? "lg:w-max lg:flex-row lg:items-center" : "") }>
+    <div className={`post-card flex w-full grow flex-col gap-x-8 gap-y-5 sm:w-2/5 lg:w-3/12 ` + (isIndexAndFirst ? "lg:w-max lg:flex-row lg:items-center" : "") }>
       <div className="relative aspect-video w-full overflow-hidden rounded-[10px]">
         <img src={postImagePath + props.data.image} className='h-full w-full object-cover object-center' />
       </div>
@@ -19,7 +19,8 @@ const PostCard = (props) => {
             <span>June 28, 2021</span>
           </div>
           <p className="text-2xl">{props.data.title}</p>
-          <p className="opacity-60">{props.data.content.slice(0,165)+'...'}</p>
+          <p className="opacity-60">{props.data.content}</p>
+          {/* <p className="opacity-60">{props.data.content.slice(0,165)+'...'}</p> */}
         </div>
         <div className="flex items-center gap-4">
           <div className="h-[50px] w-[50px] overflow-hidden rounded-full">

@@ -38,3 +38,19 @@ a, button {
 .hamburger-active > span:nth-child(3) {
   @apply -rotate-[40deg] origin-bottom-left;
 }
+
+.post-card p {
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+
+}
+
+.post-card p.opacity-60 {
+  -webkit-line-clamp: 4;
+  @apply max-h-24;
+}
