@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import Posts, { fetchData } from "./Posts"
+import Posts from "./Posts"
+import { getPosts } from "../posts"
 
 const Home = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetchData()
+    getPosts()
       .then(posts => setData(posts))
   }, [])
 

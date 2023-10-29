@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 
-const fetchData = async () => {
-  const response = await fetch('http://localhost:5173/data.json')
-  const posts = await response.json()
-  return posts
-}
-
-export { fetchData }
-
 export default function Posts({ data, category }){
 
   return (
