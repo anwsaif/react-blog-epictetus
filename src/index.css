@@ -21,7 +21,7 @@
 }
 
 a, button {
-  @apply hover:opacity-60;
+  @apply hover:opacity-60 transition duration-75;
 }
 
 /* .hamburger-active > span { */
