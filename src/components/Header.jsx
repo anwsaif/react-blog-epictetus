@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react"
 import { Link, Form } from "react-router-dom"
 
 const navItems= [
@@ -11,6 +12,21 @@ const navItems= [
 
 export { navItems }
 export default function Header(){
+  const [isFixed, setIsFixed] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  function handleScroll(){
+    if(window.scrollY > 95){
+      setIsFixed(true)
+    } else {
+      setIsFixed(false)
+    }
+  }
+
   const [...navMenu] = navItems
   const toggleClass = (el, classn = 'hidden') => {
     el.classList.toggle(classn)
@@ -29,7 +45,8 @@ export default function Header(){
   }
 
   return (
-    <header className="p-[30px] ">
+    <>
+    <header className={`navbar-fixed w-full p-[30px] transition duration-500 ` + (isFixed ? 'bg-[#374151]' : '')}>
       <div className="container mx-auto">
         <div className="flex items-center justify-between ">
           <div>
@@ -111,5 +128,7 @@ export default function Header(){
       </div>
 
     </header>
+    <div className="h-[95px] w-full"></div>
+    </>
   )
 }

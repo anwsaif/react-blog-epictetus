@@ -54,3 +54,7 @@ a, button {
   -webkit-line-clamp: 4;
   @apply max-h-24;
 }
+
+.navbar-fixed {
+  @apply fixed z-50;
+}

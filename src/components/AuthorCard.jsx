@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom"
 const AuthorCard = ({ data }) => {
   const { authorImagePath } = useOutletContext()
   return (
-    <div className="flex items-center gap-4">
+    <div className="mt-2 flex items-center gap-4">
       <div className="h-[50px] w-[50px] overflow-hidden rounded-full">
         <img src={authorImagePath + data.author_image} alt={data.author_name} />
       </div>
