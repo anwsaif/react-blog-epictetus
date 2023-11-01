@@ -15,19 +15,16 @@ export default function Header(){
   const [isFixed, setIsFixed] = useState(false)
   const [isSearch, setIsSearch] = useState(false)
   const [ham, setHam] = useState()
-  const [searchBar, setSearchBar] = useState()
   const nav = document.getElementById('nav-mobile')
   const lainnya = document.getElementById('nav-lainnya')
   const lainnyaBtn = document.getElementById('btn-lainnya')
 
   function searchToggle(){
     setIsSearch(!isSearch)
-    toggleClass(searchBar, 'hidden')
   }
 
   useEffect(() => {
     setHam(document.getElementById('nav-button'))
-    setSearchBar(document.getElementById('search-bar'))
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -41,14 +38,25 @@ export default function Header(){
     return () => window.removeEventListener('click', closeNavbar)
   })
 
+  useEffect(() => {
+    window.addEventListener('click', closeLainnya)
+    return () => window.removeEventListener('click', closeLainnya)
+  })
+
+  function closeLainnya(e){
+    if(!lainnyaBtn.contains(e.target)){
+      lainnya.classList.add('scale-0')
+      lainnya.classList.remove('scale-100')
+    } 
+  }
+
   function closeNavbar(e){
-    if(!document.getElementById('navbar').contains(e.target)) {
-      if(e.target != ham){
+    if(!document.getElementById('navbar').contains(e.target) || nav.contains(e.target)) {
+      console.log(e.target)
+      if(!ham.contains(e.target) || nav.contains(e.target)){
         ham.classList.remove('hamburger-active')
-        nav.classList.add('hidden')
-        nav.classList.remove('flex')
-      } else if(e.target != lainnyaBtn){
-        lainnya.classList.add('hidden')
+        nav.classList.add('scale-0')
+        nav.classList.remove('scale-1')
       } 
     }
   }
@@ -67,7 +75,8 @@ export default function Header(){
   }
 
   const onLainnyaClickHandler = () => {
-    toggleClass(lainnyaBtn)
+    toggleClass(lainnya, 'scale-0')
+    toggleClass(lainnya, 'scale-100')
   }
 
   const onHamburgerClickHandler = () => {
@@ -113,7 +122,7 @@ export default function Header(){
                       <path d="M4 6L8 10L12 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg> </span>
                   </button>
-                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex hidden w-36 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-4 shadow-xl">
+                  <ul id="nav-lainnya" className="absolute top-8 z-50 flex w-36 origin-top scale-0 flex-col gap-2 rounded-sm bg-[#374151] px-3 py-4 shadow-xl transition">
                     {navMenu.map(({ path, link }) => {
                       return (
                         <li key={path}>
@@ -138,7 +147,7 @@ export default function Header(){
               </g>
             </svg>
           </button>
-          <div id="search-bar" className={(isSearch ? '!static w-full scale-x-[1!important] bg-[rgba(31,41,55,0.60)!important]' : '') + ` absolute flex items-center gap-3 rounded-full bg-transparent pl-5 lg:w-full lg:max-w-[224px] lg:bg-[rgba(31,41,55,0.60)] transition duration-500 ease-in-out scale-x-0 origin-right`}>
+          <div id="search-bar" className={(isSearch ? '!static w-full scale-x-[1!important] bg-[rgba(31,41,55,0.60)!important]' : '') + ` absolute flex items-center gap-3 rounded-full lg:scale-x-100 lg:static bg-transparent pl-5 lg:w-full lg:max-w-[224px] lg:bg-[rgba(31,41,55,0.60)] transition duration-500 ease-in-out scale-x-0 origin-right`}>
             <span className={(isSearch ? 'block' : 'hidden') +" lg:block"}>
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.1" clipPath="url(#clip0_5_30)">

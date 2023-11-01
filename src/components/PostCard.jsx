@@ -7,7 +7,7 @@ const PostCard = ({ data, id }) => {
   const isIndexAndFirst = useLocation().pathname === '/' && id === 0
 
   return (
-    <Link to={`/post/` + data.id} className={`post-card flex w-full grow flex-col transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-[1.01] hover:opacity-80 gap-x-8 gap-y-5 sm:w-2/5 lg:w-3/12 ` + (isIndexAndFirst ? "lg:w-max lg:flex-row lg:items-center" : "") }>
+    <Link to={`/post/` + data.id} className={`post-card flex w-full grow flex-col transition duration-300 ease-in-out hover:-translate-y-1 hover:opacity-100 gap-x-8 gap-y-5 sm:w-2/5 lg:w-3/12 ` + (isIndexAndFirst ? "lg:w-max lg:flex-row lg:items-center" : "") }>
       <div className="relative aspect-video w-full overflow-hidden rounded-[10px]">
         <img src={postImagePath + data.image} className='h-full w-full object-cover object-center' />
       </div>
