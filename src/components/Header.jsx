@@ -18,6 +18,7 @@ export default function Header(){
   const nav = document.getElementById('nav-mobile')
   const lainnya = document.getElementById('nav-lainnya')
   const lainnyaBtn = document.getElementById('btn-lainnya')
+  const searchBar = document.getElementById('search-bar')
 
   function searchToggle(){
     setIsSearch(!isSearch)
@@ -43,6 +44,17 @@ export default function Header(){
     return () => window.removeEventListener('click', closeLainnya)
   })
 
+  useEffect(() => {
+    window.addEventListener('click', closeSearch)
+    return () => window.removeEventListener('click', closeSearch)
+  })
+
+  function closeSearch(e){
+    if(!searchBar.contains(e.target) && !document.getElementById('search-btn').contains(e.target)){
+      setIsSearch(false)
+    }
+  }
+
   function closeLainnya(e){
     if(!lainnyaBtn.contains(e.target)){
       lainnya.classList.add('scale-0')
@@ -52,7 +64,6 @@ export default function Header(){
 
   function closeNavbar(e){
     if(!document.getElementById('navbar').contains(e.target) || nav.contains(e.target)) {
-      console.log(e.target)
       if(!ham.contains(e.target) || nav.contains(e.target)){
         ham.classList.remove('hamburger-active')
         nav.classList.add('scale-0')
@@ -87,7 +98,7 @@ export default function Header(){
 
   return (
     <>
-    <header className={`navbar-fixed w-full p-[30px] transition duration-500 ` + (isFixed ? 'bg-[#374151]' : '')}>
+    <header className={`navbar-fixed w-full px-[30px] transition duration-500 py-5 ` + (isFixed ? 'bg-[#374151]' : '')}>
       <div className="container mx-auto">
         <div className="flex items-center justify-between ">
           <div id="navbar">
@@ -117,7 +128,7 @@ export default function Header(){
                   )
                 })}
                 <div className="relative">
-                  <button id="btn-lainnya" className="inline" onClick={onLainnyaClickHandler}>
+                  <button id="btn-lainnya" className="ml-3 inline" onClick={onLainnyaClickHandler}>
                     Lainnya <span><svg className="inline" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 6L8 10L12 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg> </span>
@@ -139,7 +150,7 @@ export default function Header(){
             <span className="flex h-[35px] w-[35px] items-center justify-center bg-[#4B5563] font-source">E</span>
             <span>Epictetus</span>
           </Link>
-          <button className={(isSearch ? 'hidden' : '') +` opacity-40 hover:cursor-pointer lg:hidden lg:opacity-10`} onClick={searchToggle}>
+          <button id="search-btn" className={(isSearch ? 'hidden' : '') +` opacity-40 hover:cursor-pointer lg:hidden lg:opacity-10`} onClick={searchToggle}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="1">
                 <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -170,7 +181,7 @@ export default function Header(){
       </div>
 
     </header>
-    <div className="h-[95px] w-full"></div>
+    <div className="h-[75px] w-full"></div>
     </>
   )
 }

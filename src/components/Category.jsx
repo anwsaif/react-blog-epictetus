@@ -12,7 +12,7 @@ const Category = () => {
     // console.log('so this is how it went')
     getPosts()
       .then(posts => posts.filter(post => post.category.toLowerCase().replaceAll(' ', '-') === category))
-      .then(filteredPosts => setData(filteredPosts))
+      .then(filteredPosts => setData(filteredPosts), window.scrollTo(0,0))
     
   }, [category])
 
