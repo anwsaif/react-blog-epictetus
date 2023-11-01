@@ -1,4 +1,4 @@
-export const getPosts = async () => {
+export const getPosts = async (q='') => {
   const response = await fetch('http://localhost:5173/data.json')
   const posts = await response.json()
   return posts

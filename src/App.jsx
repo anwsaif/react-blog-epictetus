@@ -5,6 +5,8 @@ import Layout from './components/Layout'
 import Home from './components/Home'
 import Category from './components/Category'
 import { Post } from './components/Post'
+import NoResults from './components/NoResults'
+import Search from './components/Search'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="category/:category" element={<Category />} />
             <Route path='post/:id' element={<Post />} />
+            <Route path="*" element={<NoResults />} />
+            <Route path="/search" element={<Search />} />
           </Route>
         </Routes>
       </Router>

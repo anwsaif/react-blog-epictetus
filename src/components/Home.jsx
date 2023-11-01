@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react"
 import Posts from "./Posts"
-import { getPosts } from "../posts"
+// import { getPosts } from "../posts"
 
 const Home = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
 
   useEffect(() => {
-    getPosts()
-      .then(posts => setData(posts))
-  }, [])
+    setTimeout( async (q='') => {
+      const response = await fetch('http://localhost:5173/data.json')
+      const posts = await response.json()
+      setData(posts)
+    }, 5000)
+  })
 
   return (
-    <Posts data={data} />
+    <>
+    {data && <Posts data={data} />}
+      {!data && <div>loading...</div>}
+    </>
   )
 }
 

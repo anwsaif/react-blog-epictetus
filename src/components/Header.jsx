@@ -172,7 +172,7 @@ export default function Header(){
                 </defs>
               </svg>
             </span>
-            <form className={(isSearch ? 'block' : 'hidden') +" w-full lg:block"}>
+            <form className={(isSearch ? 'block' : 'hidden') +" w-full lg:block"} action="/search">
               <input name="q" className="w-full bg-transparent px-2 py-3 outline-none" placeholder="Search" />
             </form>
           </div>

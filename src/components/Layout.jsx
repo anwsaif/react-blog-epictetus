@@ -9,10 +9,10 @@ export default function Layout(){
   const authorImagePath = `${host}authors/`
 
   return (
-    <>
+    <div className="flex min-h-screen flex-col justify-between">
       <Header />
       <Outlet context={{ postImagePath, authorImagePath }} />
       <Footer />
-    </>
+    </div>
   )
 }

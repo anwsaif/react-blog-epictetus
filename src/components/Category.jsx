@@ -7,6 +7,7 @@ import { getPosts } from "../posts"
 const Category = () => {
   const [data, setData] = useState([])
   const { category } = useParams()
+  const message = ""
 
   useEffect(() => {
     // console.log('so this is how it went')
@@ -17,7 +18,7 @@ const Category = () => {
   }, [category])
 
   return (
-    <Posts data={data} category={navItems.find(item => item.path === category).link} />
+    <Posts data={data} category={navItems.find(item => item.path === category).link} message={message} />
   )
 }
 
